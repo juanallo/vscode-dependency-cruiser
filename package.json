@@ -1,56 +1,65 @@
 {
-	"name": "vscode-dependency-cruiser",
-	"displayName": "vscode-dependency-cruiser",
-	"description": "vs code extension to run dependency analysis using dependency-cruiser. Visualize module dependencies from a file ",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.43.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onCommand:extension.helloWorld"
-	],
-	"main": "./extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
-			}
-		]
-	},
-	"scripts": {
-		"lint": "eslint .",
-		"pretest": "npm run lint",
-		"test": "node ./test/runTest.js"
-	},
-	"dependencies": {
-		"dependency-cruiser": "^8.1.0",
-		"viz.js": "^2.1.2"
-	},
-	"devDependencies": {
-		"@types/glob": "^7.1.1",
-		"@types/mocha": "^7.0.1",
-		"@types/node": "^12.11.7",
-		"@types/vscode": "^1.43.0",
-		"eslint": "^6.8.0",
-		"glob": "^7.1.6",
-		"husky": "^4.2.3",
-		"lint-staged": "^10.0.10",
-		"mocha": "^7.0.1",
-		"prettier": "2.0.2",
-		"typescript": "^3.7.5",
-		"vscode-test": "^1.3.0"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.js": "eslint --cache --fix",
-		"*.{js,css,md, json}": "prettier --write"
-	}
+    "name": "vscode-dependency-cruiser",
+    "displayName": "vscode-dependency-cruiser",
+    "description": "vs code extension to run dependency analysis using dependency-cruiser. Visualize module dependencies from a file ",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.43.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.dependencyCommand"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.dependencyCommand",
+                "title": "Dependency Analysis"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "resourceLangId == javascript",
+                    "command": "extension.dependencyContextMenu",
+                    "title": "Dependency Analysis"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "lint": "eslint --cache --fix . && prettier --write .",
+        "pretest": "npm run lint",
+        "test": "node ./test/runTest.js"
+    },
+    "dependencies": {
+        "dependency-cruiser": "^8.1.0",
+        "viz.js": "^2.1.2"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^7.0.1",
+        "@types/node": "^12.11.7",
+        "@types/vscode": "^1.43.0",
+        "eslint": "^6.8.0",
+        "glob": "^7.1.6",
+        "husky": "^4.2.3",
+        "lint-staged": "^10.0.10",
+        "mocha": "^7.0.1",
+        "prettier": "2.0.2",
+        "typescript": "^3.7.5",
+        "vscode-test": "^1.3.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.js": "eslint --cache --fix",
+        "*.{js,css,md, json}": "prettier --write"
+    }
 }
