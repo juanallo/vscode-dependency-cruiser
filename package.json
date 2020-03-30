@@ -26,6 +26,10 @@
 		"pretest": "npm run lint",
 		"test": "node ./test/runTest.js"
 	},
+	"dependencies": {
+		"dependency-cruiser": "^8.1.0",
+		"viz.js": "^2.1.2"
+	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^7.0.1",
