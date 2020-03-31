@@ -33,26 +33,32 @@ const buildView = (title, graph) => {
         `
 }
 
+const weViewListener = (message) => {
+    switch (message.command) {
+        case 'open':
+            openFile(message.url)
+            return
+    }
+}
+
+const createPanel = (vscode, title) => {
+    return vscode.window.createWebviewPanel(
+        `dependency-analysis-${Date.now()}`,
+        title,
+        vscode.ViewColumn.One,
+        {
+            enableScripts: true,
+        }
+    )
+}
+
 module.exports = {
     openGraph({ vscode, fileName, graph, context }) {
         const title = `${fileName} Dependencies`
-        const panel = vscode.window.createWebviewPanel(
-            `dependency-analysis-${Date.now()}`,
-            title,
-            vscode.ViewColumn.One,
-            {
-                enableScripts: true,
-            }
-        )
+        const panel = createPanel(vscode, title)
 
         panel.webview.onDidReceiveMessage(
-            (message) => {
-                switch (message.command) {
-                    case 'open':
-                        openFile(message.url)
-                        return
-                }
-            },
+            weViewListener,
             undefined,
             context.subscriptions
         )
