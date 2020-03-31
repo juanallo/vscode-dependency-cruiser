@@ -8,13 +8,13 @@ const myExtension = require('../../extension')
 suite('Extension Test Suite', () => {
     vscode.window.showInformationMessage('Start all tests.')
 
-    test('Check that there are 2 extensions registered', () => {
+    test('Check that there are 1 extensions registered', () => {
         const context = {
             subscriptions: [],
         }
         try {
             myExtension.activate(context)
-            assert.equal(context.subscriptions.length, 2)
+            assert.equal(context.subscriptions.length, 1)
         } finally {
             context.subscriptions.length = 0
         }

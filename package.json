@@ -10,22 +10,22 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.dependencyCommand"
+        "onCommand:extension.dependencyAnalysis"
     ],
     "main": "./extension.js",
     "contributes": {
         "commands": [
             {
-                "command": "extension.dependencyCommand",
-                "title": "Dependency Analysis"
+                "command": "extension.dependencyAnalysis",
+                "title": "View Dependencies"
             }
         ],
         "menus": {
             "explorer/context": [
                 {
                     "when": "resourceLangId == javascript",
-                    "command": "extension.dependencyContextMenu",
-                    "title": "Dependency Analysis"
+                    "command": "extension.dependencyAnalysis",
+                    "title": "View Dependencies"
                 }
             ]
         }
