@@ -1,3 +1,5 @@
+const { openFile } = require('./file')
+
 const buildView = (title, graph) => {
     return `
     <!DOCTYPE html>
@@ -47,15 +49,7 @@ module.exports = {
             (message) => {
                 switch (message.command) {
                     case 'open':
-                        var openPath = vscode.Uri.file(
-                            `${vscode.workspace.rootPath}/${message.url}`
-                        )
-                        vscode.workspace
-                            .openTextDocument(openPath)
-                            .then((doc) => {
-                                vscode.window.showTextDocument(doc)
-                            })
-                        vscode.window.showErrorMessage(message.url)
+                        openFile(message.url)
                         return
                 }
             },
