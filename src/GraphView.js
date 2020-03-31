@@ -9,19 +9,58 @@ const buildView = (title, graph) => {
             </head>
             <body>
                 ${graph}
+
+                <script> 
+                    const vscode = acquireVsCodeApi();
+                    const svg =  document.getElementsByTagName('svg')[0]
+                    const links = svg.getElementsByTagName('a')
+
+                    for(let i = 0; i < links.length; i++){
+                        const node = links[i]
+                        node.addEventListener('click', event => {
+                            const url = node.getAttribute('xlink:href')
+                            vscode.postMessage({
+                                command: 'open',
+                                url
+                            })
+                        })
+                    }
+                </script>
             </body>
         </html>
         `
 }
 
 module.exports = {
-    openGraph({ vscode, fileName, graph }) {
+    openGraph({ vscode, fileName, graph, context }) {
         const title = `${fileName} Dependencies`
         const panel = vscode.window.createWebviewPanel(
             `dependency-analysis-${Date.now()}`,
             title,
             vscode.ViewColumn.One,
-            {}
+            {
+                enableScripts: true,
+            }
+        )
+
+        panel.webview.onDidReceiveMessage(
+            (message) => {
+                switch (message.command) {
+                    case 'open':
+                        var openPath = vscode.Uri.file(
+                            `${vscode.workspace.rootPath}/${message.url}`
+                        )
+                        vscode.workspace
+                            .openTextDocument(openPath)
+                            .then((doc) => {
+                                vscode.window.showTextDocument(doc)
+                            })
+                        vscode.window.showErrorMessage(message.url)
+                        return
+                }
+            },
+            undefined,
+            context.subscriptions
         )
 
         panel.webview.html = buildView(title, graph)

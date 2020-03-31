@@ -19,7 +19,12 @@ function activate(context) {
                 const graph = await runDependencyAnalysis(filePath)
 
                 const fileName = getFileName(filePath)
-                openGraph({ vscode, fileName, graph: graph.toString() })
+                openGraph({
+                    vscode,
+                    fileName,
+                    graph: graph.toString(),
+                    context,
+                })
             } else {
                 vscode.window.showWarningMessage(
                     'No Active Editor tabs, please select a file first'
