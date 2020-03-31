@@ -1,12 +1,12 @@
 const vscode = require('vscode')
 const runDependencyAnalysis = require('./src/dependencyAnalysis')
 const { getFileName, RelativeFilePath } = require('./src/file')
+const { openGraph } = require('./src/GraphView')
 
 /**
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-    let counter = 1
     const dependencyCommand = vscode.commands.registerCommand(
         'extension.dependencyAnalysis',
         async function (file) {
@@ -17,16 +17,9 @@ function activate(context) {
             if (filePath) {
                 process.chdir(vscode.workspace.rootPath)
                 const graph = await runDependencyAnalysis(filePath)
+
                 const fileName = getFileName(filePath)
-
-                const panel = vscode.window.createWebviewPanel(
-                    `dependency-analysis-${counter++}`,
-                    `${fileName} Dependencies`,
-                    vscode.ViewColumn.One,
-                    {}
-                )
-
-                panel.webview.html = graph.toString()
+                openGraph({ vscode, fileName, graph: graph.toString() })
             } else {
                 vscode.window.showWarningMessage(
                     'No Active Editor tabs, please select a file first'

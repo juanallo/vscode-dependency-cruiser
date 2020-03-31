@@ -23,7 +23,6 @@
         "menus": {
             "explorer/context": [
                 {
-                    "when": "resourceLangId == javascript",
                     "command": "extension.dependencyAnalysis",
                     "title": "View Dependencies"
                 }
