@@ -1,4 +1,5 @@
 const vscode = require('vscode')
+const path = require('path')
 
 const getRelativePath = (path) => {
     return path.replace(`${vscode.workspace.rootPath}/`, '')
@@ -20,5 +21,8 @@ const RelativeFilePath = {
 }
 
 module.exports = {
+    getFileName(filePath) {
+        return path.basename(filePath, path.extname(filePath))
+    },
     RelativeFilePath,
 }

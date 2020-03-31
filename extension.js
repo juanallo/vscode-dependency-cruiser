@@ -1,6 +1,6 @@
 const vscode = require('vscode')
 const runDependencyAnalysis = require('./src/dependencyAnalysis')
-const { RelativeFilePath } = require('./src/file')
+const { getFileName, RelativeFilePath } = require('./src/file')
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -17,10 +17,11 @@ function activate(context) {
             if (filePath) {
                 process.chdir(vscode.workspace.rootPath)
                 const graph = await runDependencyAnalysis(filePath)
+                const fileName = getFileName(filePath)
 
                 const panel = vscode.window.createWebviewPanel(
                     `dependency-analysis-${counter++}`,
-                    'View Dependencies',
+                    `${fileName} Dependencies`,
                     vscode.ViewColumn.One,
                     {}
                 )
