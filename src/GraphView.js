@@ -33,7 +33,7 @@ const buildView = (title, graph) => {
         `
 }
 
-const weViewListener = (message) => {
+const webViewListener = (message) => {
     switch (message.command) {
         case 'open':
             openFile(message.url)
@@ -58,7 +58,7 @@ module.exports = {
         const panel = createPanel(vscode, title)
 
         panel.webview.onDidReceiveMessage(
-            weViewListener,
+            webViewListener,
             undefined,
             context.subscriptions
         )
