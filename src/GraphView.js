@@ -1,6 +1,7 @@
 const { openFile } = require('./file')
+const path = require('path')
 
-const buildView = (title, graph) => {
+const buildView = (title, graph, main) => {
     return `
     <!DOCTYPE html>
         <html lang="en">
@@ -11,23 +12,8 @@ const buildView = (title, graph) => {
             </head>
             <body>
                 ${graph}
-
-                <script> 
-                    const vscode = acquireVsCodeApi();
-                    const svg =  document.getElementsByTagName('svg')[0]
-                    const links = svg.getElementsByTagName('a')
-
-                    for(let i = 0; i < links.length; i++){
-                        const node = links[i]
-                        node.addEventListener('click', event => {
-                            const url = node.getAttribute('xlink:href')
-                            vscode.postMessage({
-                                command: 'open',
-                                url
-                            })
-                        })
-                    }
-                </script>
+                
+                <script type="module" src="${main}" ></script>
             </body>
         </html>
         `
@@ -41,13 +27,18 @@ const webViewListener = (message) => {
     }
 }
 
-const createPanel = (vscode, title) => {
+const createPanel = (vscode, context, title) => {
     return vscode.window.createWebviewPanel(
         `dependency-analysis-${Date.now()}`,
         title,
         vscode.ViewColumn.One,
         {
             enableScripts: true,
+            localResourceRoots: [
+                vscode.Uri.file(
+                    path.join(context.extensionPath, 'src/webView')
+                ),
+            ],
         }
     )
 }
@@ -55,7 +46,7 @@ const createPanel = (vscode, title) => {
 module.exports = {
     openGraph({ vscode, fileName, graph, context }) {
         const title = `${fileName} Dependencies`
-        const panel = createPanel(vscode, title)
+        const panel = createPanel(vscode, context, title)
 
         panel.webview.onDidReceiveMessage(
             webViewListener,
@@ -63,6 +54,12 @@ module.exports = {
             context.subscriptions
         )
 
-        panel.webview.html = buildView(title, graph)
+        const onDiskPath = vscode.Uri.file(
+            path.join(context.extensionPath, 'src/webView', 'main.js')
+        )
+
+        const main = panel.webview.asWebviewUri(onDiskPath)
+
+        panel.webview.html = buildView(title, graph, main)
     },
 }
