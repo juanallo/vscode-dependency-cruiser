@@ -36,7 +36,7 @@ const createPanel = (vscode, context, title) => {
             enableScripts: true,
             localResourceRoots: [
                 vscode.Uri.file(
-                    path.join(context.extensionPath, 'src/webView')
+                    path.join(context.extensionPath, 'src/webViewContext')
                 ),
             ],
         }
@@ -55,7 +55,7 @@ module.exports = {
         )
 
         const onDiskPath = vscode.Uri.file(
-            path.join(context.extensionPath, 'src/webView', 'main.js')
+            path.join(context.extensionPath, 'src/webViewContext', 'main.js')
         )
 
         const main = panel.webview.asWebviewUri(onDiskPath)
