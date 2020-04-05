@@ -32,7 +32,8 @@
     "scripts": {
         "lint": "eslint --cache --fix . && prettier --write .",
         "pretest": "npm run lint",
-        "test": "node ./test/runTest.js"
+        "test": "node ./test/runTest.js",
+        "coverage": "nyc npm run test"
     },
     "dependencies": {
         "dependency-cruiser": "^8.1.0",
@@ -48,6 +49,7 @@
         "husky": "^4.2.3",
         "lint-staged": "^10.0.10",
         "mocha": "^7.0.1",
+        "nyc": "^15.0.1",
         "prettier": "2.0.2",
         "typescript": "^3.7.5",
         "vscode-test": "^1.3.0"
