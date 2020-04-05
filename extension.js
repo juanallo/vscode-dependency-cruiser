@@ -19,7 +19,7 @@ function activate(context) {
                 const graph = await runDependencyAnalysis(filePath)
 
                 const fileName = getFileName(filePath)
-                openGraph({
+                return openGraph({
                     vscode,
                     fileName,
                     graph: graph.toString(),
