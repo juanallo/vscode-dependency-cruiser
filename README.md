@@ -16,6 +16,10 @@ You Can also run the report from the content menu on any files:
 
 Finally, you can click on each node, to open the file!
 
+## Requirements
+
+The extension needs at least Node.js 10.x to run.
+
 ## Known Issues
 
 -   `node_modules` folder is currently excluded by default so no dependencies on external libraries will be listed. It is planned for 1.0.0
