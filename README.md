@@ -1,65 +1,31 @@
-# vscode-dependency-cruiser README
+# Dependency Cruiser Extension
 
-This is the README for your extension "vscode-dependency-cruiser". After writing up a brief description, we recommend including the following sections.
+View the JS dependencies for a file.
+
+![Dependency Report Example](docs/example.png)
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Pick any file, and run `View Dependencies` from the command palette. The extension will generate a Dependency Report and open that in a web View.
 
-For example if there is an image subfolder under your extension project workspace:
+![View Dependencies Command](docs/view-dependencies-command.png)
 
-\!\[feature X\]\(images/feature-x.png\)
+You Can also run the report from the content menu on any files:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![View Dependencies Context Menu](docs/view-dependencies-context.png)
 
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
--   `myExtension.enable`: enable/disable this extension
--   `myExtension.thing`: set to `blah` to do something
+Finally, you can click on each node, to open the file!
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+-   `node_modules` folder is currently excluded by default so no dependencies on external libraries will be listed. It is planned for 1.0.0
+-   `webpack configuration` is not supported yet. It is planned for 1.0.0
+
+Any other Known issue? We would really appreciate if you can [open a issue](https://github.com/juanallo/vscode-dependency-cruiser/issues).
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
--   Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
--   Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
--   Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
--   [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
--   [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+-   Generate a dependencies report from the command palette or from the context menu
+-   Open a dependency by clicking on the node from the report.

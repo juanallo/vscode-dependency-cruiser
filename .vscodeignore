@@ -2,7 +2,11 @@
 .vscode-test/**
 test/**
 .gitignore
-vsc-extension-quickstart.md
 **/jsconfig.json
 **/*.map
 **/.eslintrc.json
+.prettierignore
+.nyrc.json
+.eslintcache
+coverage/**
+.nyc_output
