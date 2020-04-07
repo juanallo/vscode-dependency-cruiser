@@ -1,14 +1,35 @@
 {
     "name": "vscode-dependency-cruiser",
-    "displayName": "vscode-dependency-cruiser",
-    "description": "vs code extension to run dependency analysis using dependency-cruiser. Visualize module dependencies from a file ",
+    "displayName": "Dependency Cruiser Extension",
+    "description": "Visual Studio Code Extension to build dependency graphs using dependency-cruiser. Visualize module dependencies from any file",
     "version": "0.0.1",
+    "publisher": "juanallo",
+    "license": "SEE LICENSE IN LICENSE",
     "engines": {
         "vscode": "^1.43.0"
     },
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "Dependency Graph",
+        "Dependency Analysis",
+        "Javascript", 
+        "Typescript"
+    ],
+    "icon": "docs/logo.png",
+    "galleryBanner": {
+        "color": "#4458be",
+        "theme": "dark"
+    },
+    "bugs": {
+        "url": "https://github.com/juanallo/vscode-dependency-cruiser/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/juanallo/vscode-dependency-cruiser.git"
+    },
+    "homepage": "https://github.com/juanallo/vscode-dependency-cruiser/blob/master/README.md",
     "activationEvents": [
         "onCommand:extension.dependencyAnalysis"
     ],

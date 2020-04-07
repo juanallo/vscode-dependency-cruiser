@@ -1,6 +1,6 @@
 # Dependency Cruiser Extension
 
-View the JS dependencies for a file.
+Check dependencies for any files quick and easy.
 
 ![Dependency Report Example](docs/example.png)
 
