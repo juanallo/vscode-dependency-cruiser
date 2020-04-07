@@ -6,7 +6,12 @@ test/**
 **/*.map
 **/.eslintrc.json
 .prettierignore
+prettier.config.js
 .nyrc.json
 .eslintcache
 coverage/**
 .nyc_output
+.nycrc.json
+.github/**
+.git/**
+node_modules/**
