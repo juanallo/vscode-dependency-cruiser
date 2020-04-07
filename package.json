@@ -51,8 +51,10 @@
         }
     },
     "scripts": {
+        "vscode:prepublish": "npm run build",
+        "build": "parcel build -t node --no-source-maps --bundle-node-modules node_modules/dependency-cruiser/src/main/index.js --out-file dependencyCruiser.js",
         "lint": "eslint --cache --fix . && prettier --write .",
-        "pretest": "npm run lint",
+        "pretest": "npm run lint && npm run build",
         "test": "node ./test/runTest.js",
         "coverage": "nyc npm run test"
     },
@@ -71,6 +73,7 @@
         "lint-staged": "^10.0.10",
         "mocha": "^7.0.1",
         "nyc": "^15.0.1",
+        "parcel-bundler": "^1.12.4",
         "prettier": "2.0.2",
         "typescript": "^3.7.5",
         "vscode-test": "^1.3.0"
