@@ -15,3 +15,6 @@ coverage/**
 .github/**
 .git/**
 node_modules/**
+!node_modules/viz.js/viz.js
+!node_modules/viz.js/full.render.js
+!node_modules/ts-pnp/index.js
