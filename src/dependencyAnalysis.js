@@ -9,5 +9,7 @@ module.exports = async (path, options) => {
         maxDepth: options.maxDepth,
     })
 
-    return new Viz({ Module, render }).renderString(analysis.output)
+    return new Viz({ Module, render }).renderString(analysis.output, {
+        engine: options.layout,
+    })
 }

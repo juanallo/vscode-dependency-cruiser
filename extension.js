@@ -15,7 +15,7 @@ function activate(context) {
                 RelativeFilePath.fromActiveTextEditor()
 
             const options = vscode.workspace.getConfiguration(
-                'dependency-cruiser'
+                'dependencyCruiser'
             )
 
             if (filePath) {

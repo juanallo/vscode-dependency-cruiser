@@ -50,7 +50,7 @@
             ]
         },
         "configuration": {
-            "title": "dependencyCruiser",
+            "title": "dependencyCruiser", 
             "properties": {
                 "dependencyCruiser.maxDepth": {
                     "type": "number",
@@ -59,6 +59,13 @@
                     "minimum": 0,
                     "maximum": 99,
                     "description": "the maximum depth to cruise; 0 <= n <= 99 (default: 0, which means 'infinite depth')"
+                },
+                "dependencyCruiser.layout": {
+                    "type": "string",
+                    "scope": "resource",
+                    "default": "dot",
+                    "enum": ["circo", "dot", "fdp", "neato", "osage", "twopi", "patchwork"],
+                    "description": "Layout for the diagram"
                 }
             }
         }
