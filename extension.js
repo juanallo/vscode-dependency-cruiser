@@ -14,9 +14,13 @@ function activate(context) {
                 RelativeFilePath.fromFile(file) ||
                 RelativeFilePath.fromActiveTextEditor()
 
+            const options = vscode.workspace.getConfiguration(
+                'dependency-cruiser'
+            )
+
             if (filePath) {
                 process.chdir(vscode.workspace.rootPath)
-                const graph = await runDependencyAnalysis(filePath)
+                const graph = await runDependencyAnalysis(filePath, options)
 
                 const fileName = getFileName(filePath)
                 return openGraph({

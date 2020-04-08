@@ -48,6 +48,19 @@
                     "title": "View Dependencies"
                 }
             ]
+        },
+        "configuration": {
+            "title": "dependencyCruiser",
+            "properties": {
+                "dependencyCruiser.maxDepth": {
+                    "type": "number",
+                    "scope": "resource",
+                    "default": 0,
+                    "minimum": 0,
+                    "maximum": 99,
+                    "description": "the maximum depth to cruise; 0 <= n <= 99 (default: 0, which means 'infinite depth')"
+                }
+            }
         }
     },
     "scripts": {
