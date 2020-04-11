@@ -102,6 +102,18 @@
                     "default": "node",
                     "enum": ["top", "folder", "node"],
                     "description": "The output type will specify the tree be generated."
+                },
+                "dependencyCruiser.theme": {
+                    "type": "string",
+                    "scope": "resource",
+                    "default": "basic",
+                    "enum": ["basic", "simple", "blueprint", "flat", "custom"],
+                    "description": "The output type will specify the tree be generated."
+                },
+                "dependencyCruiser.customTheme": {
+                    "type": "object",
+                    "scope": "resource",
+                    "description": "json for own graph style"
                 }
             }
         }

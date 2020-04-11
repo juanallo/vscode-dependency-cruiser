@@ -46,6 +46,7 @@ There are 7 layout options supported:
 -   **circular**: draws distributed circular layout around connected nodes (circo).
 -   **radial**: draws graphs using a radial layout (twopi).
 -   **treemap**: draws the graph as a squarified treemap (patchwork).
+-   **themes**: Specify a theme for the graph.
 
 For more detailed information check the [graphviz manual](https://graphviz.readthedocs.io/en/stable/manual.html#engines). You can also check [graphviz man pages](https://manpages.debian.org/stretch/graphviz/neato.1.en.html).
 
@@ -68,6 +69,16 @@ The `webpackConfig` configuration allows multiple options to be included. For ex
   }
 }
 ```
+
+#### Theme options
+
+You can specify different types of themes.
+
+-   `basic`: default theme UI
+-   `simple`: bare bones UI
+-   `blueprint`: blueprint style
+-   `flat`: flat UI style
+-   `custom`: Specify your own custom style. When specifying custom, you will also need to provide the `customTheme` configuration with it. Learn more about configurations on the [Graphviz docs](https://www.graphviz.org/doc/info/attrs.html).
 
 ## Requirements
 
