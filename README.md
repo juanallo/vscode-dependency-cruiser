@@ -25,6 +25,7 @@ The extension supports configuration for generating the diagram:
 -   **prefix**: Prefix to add to each node URL. For example, you can use this to alllow opening the file in github.
 -   **moduleSystems**: Define the module systems to be used. Supported: `['amd', 'cjs', 'es6', 'tsd']`. Defaults to `["amd", "cjs", "es6"]`
 -   **tsConfig**: Specify the path for the typescript configuration file. Defaults to `tsconfig.json`
+-   **webpackConfig**: Specify the path for the webpack configuration file. Defaults to `webpack.config.js`
 
 #### Layout Options
 
@@ -39,6 +40,20 @@ There are 7 layout options supported:
 -   **patchwork**: draws the graph as a squarified treemap.
 
 For more detailed information check the [graphviz manual](https://graphviz.readthedocs.io/en/stable/manual.html#engines). You can also check [graphviz man pages](https://manpages.debian.org/stretch/graphviz/neato.1.en.html).
+
+#### Webpack options
+
+The `webpackConfig` configuration allows multiple options to be included. For example, you can specify environment variables and send arguments to webpack:
+
+```
+"options": {
+  "webpackConfig": {
+    "fileName": "webpack.config.js",
+    "env": { "production": true },
+    "arguments": { "mode": "production" }
+  }
+}
+```
 
 ## Requirements
 

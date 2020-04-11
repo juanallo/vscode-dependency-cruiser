@@ -10,6 +10,7 @@ module.exports = async (path, options) => {
         prefix: options.prefix,
         moduleSystems: options.moduleSystems,
         tsConfig: options.tsConfig,
+        webpackConfig: options.webpackConfig,
     })
 
     return new Viz({ Module, render }).renderString(analysis.output, {

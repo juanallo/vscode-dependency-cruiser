@@ -83,6 +83,12 @@
                     "scope": "resource",
                     "default": "tsconfig.json",
                     "description": "Specify the path for the typescript configuration file"
+                },
+                "dependencyCruiser.webpackConfig": {
+                    "type": "object",
+                    "scope": "resource",
+                    "default": "webpack.config.js",
+                    "description": "Specify the path for the webpack configuration file"
                 }
             }
         }
