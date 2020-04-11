@@ -22,7 +22,7 @@ The extension supports configuration for generating the diagram:
 
 -   **exclude**: Define a regex to exclude dependencies for being listed. Defaults to `node_modules/`
 -   **maxDepth**: Define the maximun depth the cruiser will go into dependencies.
--   **layout**: Define the layout the diagram will use to display the tree. Defaults to `dot`
+-   **layout**: Define the layout the diagram will use to display the tree. Defaults to `directed`
 -   **prefix**: Prefix to add to each node URL. For example, you can use this to alllow opening the file in github.
 -   **moduleSystems**: Define the module systems to be used. Supported: `['amd', 'cjs', 'es6', 'tsd']`. Defaults to `["amd", "cjs", "es6"]`
 -   **tsConfig**: Specify the path for the typescript configuration file. Defaults to `tsconfig.json`
@@ -39,13 +39,13 @@ Use exclude to optimize the diagram you want to build.
 
 There are 7 layout options supported:
 
--   **dot**: raws directed graphs.
--   **fdp**: draws undirected graphs using a ``spring'' model.
--   **neato**: draws undirected graphs.
--   **osage**: draws clustered graphs.
--   **circo**: draws distributed circular layout around connected nodes.
--   **twopi**: draws graphs using a radial layout.
--   **patchwork**: draws the graph as a squarified treemap.
+-   **directed**: raws directed graphs (dot).
+-   **undirected**: draws undirected graphs using a ``spring'' model (neato).
+-   **undirectedCompressed**: draws undirected graphs (fdp).
+-   **clustered**: draws clustered graphs (osage).
+-   **circular**: draws distributed circular layout around connected nodes (circo).
+-   **radial**: draws graphs using a radial layout (twopi).
+-   **treemap**: draws the graph as a squarified treemap (patchwork).
 
 For more detailed information check the [graphviz manual](https://graphviz.readthedocs.io/en/stable/manual.html#engines). You can also check [graphviz man pages](https://manpages.debian.org/stretch/graphviz/neato.1.en.html).
 

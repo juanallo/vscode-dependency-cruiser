@@ -69,8 +69,8 @@
                 "dependencyCruiser.layout": {
                     "type": "string",
                     "scope": "resource",
-                    "default": "dot",
-                    "enum": ["circo", "dot", "fdp", "neato", "osage", "twopi", "patchwork"],
+                    "default": "directed",
+                    "enum": ["directed", "undirected", "undirectedCompressed", "clustered", "circular", "radial", "treemap"],
                     "description": "Layout for the diagram"
                 },
                 "dependencyCruiser.prefix": {
