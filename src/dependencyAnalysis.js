@@ -9,6 +9,7 @@ module.exports = async (path, options) => {
         maxDepth: options.maxDepth,
         prefix: options.prefix,
         moduleSystems: options.moduleSystems,
+        tsConfig: options.tsConfig,
     })
 
     return new Viz({ Module, render }).renderString(analysis.output, {

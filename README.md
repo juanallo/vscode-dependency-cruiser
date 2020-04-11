@@ -21,9 +21,10 @@ Finally, you can click on each node, to open the file!
 The extension supports configuration for generating the diagram:
 
 -   **maxDepth**: Define the maximun depth the cruiser will go into dependencies.
--   **layout**: Define the layout the diagram will use to display the tree.
+-   **layout**: Define the layout the diagram will use to display the tree. Defaults to `dot`
 -   **prefix**: Prefix to add to each node URL. For example, you can use this to alllow opening the file in github.
--   **moduleSystems**: Define the module systems to be used. Supported: ['amd', 'cjs', 'es6', 'tsd'].
+-   **moduleSystems**: Define the module systems to be used. Supported: `['amd', 'cjs', 'es6', 'tsd']`. Defaults to `["amd", "cjs", "es6"]`
+-   **tsConfig**: Specify the path for the typescript configuration file. Defaults to `tsconfig.json`
 
 #### Layout Options
 

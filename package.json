@@ -77,6 +77,12 @@
                     "scope": "resource",
                     "default": ["amd", "cjs", "es6"],
                     "description": "Define the module systems to be used. Supported: ['amd', 'cjs', 'es6', 'tsd']"
+                },
+                "dependencyCruiser.tsConfig": {
+                    "type": "string",
+                    "scope": "resource",
+                    "default": "tsconfig.json",
+                    "description": "Specify the path for the typescript configuration file"
                 }
             }
         }
