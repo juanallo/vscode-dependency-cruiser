@@ -52,6 +52,12 @@
         "configuration": {
             "title": "dependencyCruiser", 
             "properties": {
+                "dependencyCruiser.exclude": {
+                    "type": "string",
+                    "scope": "resource",
+                    "default": "node_modules/",
+                    "description": "Define a regex to exclude dependencies for being listed"
+                },
                 "dependencyCruiser.maxDepth": {
                     "type": "number",
                     "scope": "resource",

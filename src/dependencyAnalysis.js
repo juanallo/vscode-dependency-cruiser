@@ -4,7 +4,7 @@ let Viz = require('viz.js/viz.js')
 
 module.exports = async (path, options) => {
     const analysis = dc.cruise([path], {
-        exclude: 'node_modules/',
+        exclude: options.exclude,
         outputType: 'dot',
         maxDepth: options.maxDepth,
         prefix: options.prefix,
