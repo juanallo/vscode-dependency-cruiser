@@ -71,6 +71,12 @@
                     "type": "string",
                     "scope": "resource",
                     "description": "Prefix to add to each node URL. For example, you can use this to alllow opening the file in github"
+                },
+                "dependencyCruiser.moduleSystems": {
+                    "type": "array",
+                    "scope": "resource",
+                    "default": ["amd", "cjs", "es6"],
+                    "description": "Define the module systems to be used. Supported: ['amd', 'cjs', 'es6', 'tsd']"
                 }
             }
         }

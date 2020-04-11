@@ -8,6 +8,7 @@ module.exports = async (path, options) => {
         outputType: 'dot',
         maxDepth: options.maxDepth,
         prefix: options.prefix,
+        moduleSystems: options.moduleSystems,
     })
 
     return new Viz({ Module, render }).renderString(analysis.output, {

@@ -20,9 +20,10 @@ Finally, you can click on each node, to open the file!
 
 The extension supports configuration for generating the diagram:
 
--   **maxDepth**: Define the maximun depth the cruiser will go into dependencies
+-   **maxDepth**: Define the maximun depth the cruiser will go into dependencies.
 -   **layout**: Define the layout the diagram will use to display the tree.
 -   **prefix**: Prefix to add to each node URL. For example, you can use this to alllow opening the file in github.
+-   **moduleSystems**: Define the module systems to be used. Supported: ['amd', 'cjs', 'es6', 'tsd'].
 
 #### Layout Options
 
