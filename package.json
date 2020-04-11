@@ -99,8 +99,9 @@
                 "dependencyCruiser.outputType": {
                     "type": "string",
                     "scope": "resource",
-                    "default": "dot",
-                    "description": "The output type will specify the tree be generated. Allowed options are `dot`, `ddot` and `archi`"
+                    "default": "node",
+                    "enum": ["top", "folder", "node"],
+                    "description": "The output type will specify the tree be generated."
                 }
             }
         }
