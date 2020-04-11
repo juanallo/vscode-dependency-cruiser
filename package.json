@@ -66,6 +66,11 @@
                     "default": "dot",
                     "enum": ["circo", "dot", "fdp", "neato", "osage", "twopi", "patchwork"],
                     "description": "Layout for the diagram"
+                },
+                "dependencyCruiser.prefix": {
+                    "type": "string",
+                    "scope": "resource",
+                    "description": "Prefix to add to each node URL. For example, you can use this to alllow opening the file in github"
                 }
             }
         }

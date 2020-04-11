@@ -20,20 +20,21 @@ Finally, you can click on each node, to open the file!
 
 The extension supports configuration for generating the diagram:
 
--   maxDepth: Define the maximun depth the cruiser will go into dependencies
--   layout: Define the layout the diagram will use to display the tree.
+-   **maxDepth**: Define the maximun depth the cruiser will go into dependencies
+-   **layout**: Define the layout the diagram will use to display the tree.
+-   **prefix**: Prefix to add to each node URL. For example, you can use this to alllow opening the file in github.
 
 #### Layout Options
 
 There are 7 layout options supported:
 
--   dot: raws directed graphs.
--   fdp: draws undirected graphs using a ``spring'' model.
--   neato: draws undirected graphs.
--   osage: draws clustered graphs.
--   circo: draws distributed circular layout around connected nodes.
--   twopi: draws graphs using a radial layout.
--   patchwork: draws the graph as a squarified treemap.
+-   **dot**: raws directed graphs.
+-   **fdp**: draws undirected graphs using a ``spring'' model.
+-   **neato**: draws undirected graphs.
+-   **osage**: draws clustered graphs.
+-   **circo**: draws distributed circular layout around connected nodes.
+-   **twopi**: draws graphs using a radial layout.
+-   **patchwork**: draws the graph as a squarified treemap.
 
 For more detailed information check the [graphviz manual](https://graphviz.readthedocs.io/en/stable/manual.html#engines). You can also check [graphviz man pages](https://manpages.debian.org/stretch/graphviz/neato.1.en.html).
 

@@ -7,6 +7,7 @@ module.exports = async (path, options) => {
         exclude: 'node_modules/',
         outputType: 'dot',
         maxDepth: options.maxDepth,
+        prefix: options.prefix,
     })
 
     return new Viz({ Module, render }).renderString(analysis.output, {
