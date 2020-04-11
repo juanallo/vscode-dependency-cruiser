@@ -95,6 +95,12 @@
                     "scope": "resource",
                     "default": "webpack.config.js",
                     "description": "Specify the path for the webpack configuration file"
+                },
+                "dependencyCruiser.outputType": {
+                    "type": "string",
+                    "scope": "resource",
+                    "default": "dot",
+                    "description": "The output type will specify the tree be generated. Allowed options are `dot`, `ddot` and `archi`"
                 }
             }
         }

@@ -27,6 +27,7 @@ The extension supports configuration for generating the diagram:
 -   **moduleSystems**: Define the module systems to be used. Supported: `['amd', 'cjs', 'es6', 'tsd']`. Defaults to `["amd", "cjs", "es6"]`
 -   **tsConfig**: Specify the path for the typescript configuration file. Defaults to `tsconfig.json`
 -   **webpackConfig**: Specify the path for the webpack configuration file. Defaults to `webpack.config.js`
+-   **outputType**: The output type will specify the tree be generated. Allowed options are `dot`, `ddot` and `archi`. Defaults to `dot`
 
 #### Exclude Options
 
@@ -47,6 +48,12 @@ There are 7 layout options supported:
 -   **patchwork**: draws the graph as a squarified treemap.
 
 For more detailed information check the [graphviz manual](https://graphviz.readthedocs.io/en/stable/manual.html#engines). You can also check [graphviz man pages](https://manpages.debian.org/stretch/graphviz/neato.1.en.html).
+
+### OutputType Options
+
+-   **dot** is the default output reporter. It will generate a report based on leafs.
+-   **archi** will provide a high level dependencies overview
+-   **ddot** is similar to archi but will report sublevel folders
 
 #### Webpack options
 
